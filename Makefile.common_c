@@ -29,12 +29,10 @@ endif
 # You should not have to change anything below here.
 
 CC             = avr-gcc
-ATS            = patsopt
-ATSCFLAGS      = -std=c99 -D_XOPEN_SOURCE -I$(TOP)/_arduino
 
 # Override is only needed by avr-lib build system.
 
-override CFLAGS        = -g -Wall $(OPTIMIZE) -mmcu=$(MCU) -DF_CPU=$(F_CPU) $(DEFS) $(ATSCFLAGS)
+override CFLAGS        = -g -Wall $(OPTIMIZE) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(TOP)/_arduino $(DEFS)
 override LDFLAGS       = -Wl,-Map,$(PRG).map
 
 OBJCOPY        = avr-objcopy
@@ -56,7 +54,7 @@ $(OBJ_ARDUINO): %.o: $(TOP)/_arduino/%.c
 
 clean:
 	rm -rf *.o $(PRG).elf *.eps *.png *.pdf *.bak *.a
-	rm -rf *.lst *.map DATS/*.c DATS/*.o *_dats.c *.tmp $(EXTRA_CLEAN_FILES)
+	rm -rf *.lst *.map *.tmp $(EXTRA_CLEAN_FILES)
 
 lst:  $(PRG).lst
 
