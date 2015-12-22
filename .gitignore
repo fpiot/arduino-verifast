@@ -23,9 +23,5 @@
 *.lst
 *.srec
 
-# Ivory
-demo/*/MainIvory.c
-demo/*/MainIvory.h
-ivory.h
-ivory_asserts.h
-ivory_templates.h
+# VeriFast
+demo/*/verifast_inc/
