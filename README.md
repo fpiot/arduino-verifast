@@ -1,10 +1,8 @@
-# Ivory programing on Arduino
+# VeriFast programing on Arduino
 
 ## Demo code
 
-The Ivory code is found at following:
-
-* [Example 01: Blinking LED](./demo/01_blink/MainIvory.hs)
+T.B.D.
 
 ## Hardware: [Arduino Uno](http://arduino.cc/en/Main/ArduinoBoardUno)
 
@@ -55,23 +53,7 @@ T.B.D.
 
 ## How to build
 
-Install Ivory http://ivorylang.org/.
-
-```
-$ git clone https://github.com/GaloisInc/ivory.git
-$ cd ivory
-$ for i in ivory ivory-artifact ivory-opts ivory-backend-c ivory-eval ivory-stdlib ivory-examples ivory-hw ivory-model-check ivory-quickcheck ivory-serialize; do (cd $i && cabal install); done
-```
-
-Compile the Ivory source code for Arduino.
-
-```
-$ cd arduino-ivory/demo/01_blink/
-$ make
-$ file main.elf main.hex
-main.elf: ELF 32-bit LSB executable, Atmel AVR 8-bit, version 1 (SYSV), statically linked, not stripped
-main.hex: ASCII text, with CRLF line terminators
-```
+T.B.D.
 
 
 ## Write to the flash
