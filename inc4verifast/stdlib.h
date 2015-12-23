@@ -127,7 +127,7 @@ int abs(int __i);
     \c i.
    \note The abs() and labs() functions are builtins of gcc.
 */
-extern long labs(long __i);
+long labs(long __i);
 #ifndef __DOXYGEN__
 #define labs(__i) __builtin_labs(__i)
 #endif
@@ -150,7 +150,7 @@ extern long labs(long __i);
      the array, or a null pointer if no match is found.  If two
      members compare as equal, which member is matched is unspecified.
 */
-typedef int __compar_bsearch(const void *, const void *));
+typedef int __compar_bsearch(const void *a, const void *b);
 void *bsearch(const void *__key, const void *__base, size_t __nmemb,
 		     size_t __size, __compar_bsearch *__compar);
 
@@ -160,13 +160,13 @@ void *bsearch(const void *__key, const void *__base, size_t __nmemb,
      the quotient and remainder in a structure named \c div_t that
      contains two int members named \c quot and \c rem.
 */
-extern div_t div(int __num, int __denom) __asm__("__divmodhi4") __ATTR_CONST__;
+div_t div(int __num, int __denom);
 /**
      The ldiv() function computes the value \c num/denom and returns
      the quotient and remainder in a structure named \c ldiv_t that
      contains two long integer members named \c quot and \c rem.
 */
-extern ldiv_t ldiv(long __num, long __denom) __asm__("__divmodsi4") __ATTR_CONST__;
+ldiv_t ldiv(long __num, long __denom);
 
 /**
      The qsort() function is a modified partition-exchange sort, or
@@ -183,7 +183,7 @@ extern ldiv_t ldiv(long __num, long __denom) __asm__("__divmodsi4") __ATTR_CONST
      to, or greater than zero if the first argument is considered to
      be respectively less than, equal to, or greater than the second.
 */
-extern void qsort(void *__base, size_t __nmemb, size_t __size,
+void qsort(void *__base, size_t __nmemb, size_t __size,
 		  __compar_fn_t __compar);
 
 /**
@@ -216,7 +216,7 @@ extern void qsort(void *__base, size_t __nmemb, size_t __size,
     errno is set to \ref avr_errno "ERANGE" and the function return value
     is clamped to \c LONG_MIN or \c LONG_MAX, respectively.
 */
-extern long strtol(const char *__nptr, char **__endptr, int __base);
+long strtol(const char *__nptr, char **__endptr, int __base);
 
 /**
     The strtoul() function converts the string in \c nptr to an
@@ -250,7 +250,7 @@ extern long strtol(const char *__nptr, char **__endptr, int __base);
     errno is set to \ref avr_errno "ERANGE".  If no conversion could 
     be performed, 0 is returned.
 */
-extern unsigned long strtoul(const char *__nptr, char **__endptr, int __base);
+unsigned long strtoul(const char *__nptr, char **__endptr, int __base);
 
 /**
     The atol() function converts the initial portion of the string
@@ -262,7 +262,7 @@ extern unsigned long strtoul(const char *__nptr, char **__endptr, int __base);
     the result value is not predictable), uses smaller memory (flash and
     stack) and works more quickly.
 */
-extern long atol(const char *__s) __ATTR_PURE__;
+long atol(const char *__s);
 
 /**
     The atoi() function converts the initial portion of the string
@@ -274,7 +274,7 @@ extern long atol(const char *__s) __ATTR_PURE__;
     the result value is not predictable), uses smaller memory (flash and
     stack) and works more quickly.
 */
-extern int atoi(const char *__s) __ATTR_PURE__;
+int atoi(const char *__s);
 
 /**
    The exit() function terminates the application.  Since there is no
@@ -286,7 +286,7 @@ extern int atoi(const char *__s) __ATTR_PURE__;
    In a C++ context, global destructors will be called before halting
    execution.
 */
-extern void exit(int __status) __ATTR_NORETURN__;
+void exit(int __status);
 
 /**
    The malloc() function allocates \c size bytes of memory.
@@ -298,36 +298,36 @@ extern void exit(int __status) __ATTR_NORETURN__;
    See the chapter about \ref malloc "malloc() usage" for implementation
    details.
 */
-extern void *malloc(size_t __size) __ATTR_MALLOC__;
+void *malloc(size_t __size);
 
 /**
    The free() function causes the allocated memory referenced by \c
    ptr to be made available for future allocations.  If \c ptr is
    NULL, no action occurs.
 */
-extern void free(void *__ptr);
+void free(void *__ptr);
 
 /**
    \c malloc() \ref malloc_tunables "tunable".
 */
-extern size_t __malloc_margin;
+size_t __malloc_margin;
 
 /**
    \c malloc() \ref malloc_tunables "tunable".
 */
-extern char *__malloc_heap_start;
+char *__malloc_heap_start;
 
 /**
    \c malloc() \ref malloc_tunables "tunable".
 */
-extern char *__malloc_heap_end;
+char *__malloc_heap_end;
 
 /**
    Allocate \c nele elements of \c size each.  Identical to calling
    \c malloc() using <tt>nele * size</tt> as argument, except the
    allocated memory will be cleared to zero.
 */
-extern void *calloc(size_t __nele, size_t __size) __ATTR_MALLOC__;
+void *calloc(size_t __nele, size_t __size);
 
 /**
    The realloc() function tries to change the size of the region
@@ -346,11 +346,11 @@ extern void *calloc(size_t __nele, size_t __size) __ATTR_MALLOC__;
    If the new memory cannot be allocated, realloc() returns NULL, and
    the region at \c ptr will not be changed.
 */
-extern void *realloc(void *__ptr, size_t __size) __ATTR_MALLOC__;
+void *realloc(void *__ptr, size_t __size);
 
-extern double strtod(const char *__nptr, char **__endptr);
+double strtod(const char *__nptr, char **__endptr);
 
-extern double atof(const char *__nptr);
+double atof(const char *__nptr);
 
 /** Highest number that can be generated by rand(). */
 #define	RAND_MAX 0x7FFF
@@ -372,18 +372,18 @@ extern double atof(const char *__nptr);
      \c random() for an alternate set of functions that retains full
      32-bit precision.
 */
-extern int rand(void);
+int rand(void);
 /**
    Pseudo-random number generator seeding; see rand().
 */
-extern void srand(unsigned int __seed);
+void srand(unsigned int __seed);
 
 /**
    Variant of rand() that stores the context in the user-supplied
    variable located at \c ctx instead of a static library variable
    so the function becomes re-entrant.
 */
-extern int rand_r(unsigned long *__ctx);
+int rand_r(unsigned long *__ctx);
 
 
 
@@ -417,20 +417,7 @@ extern int rand_r(unsigned long *__ctx);
 #ifdef  __DOXYGEN__
 extern char *itoa(int val, char *s, int radix);
 #else
-extern __inline__ __ATTR_GNU_INLINE__
-char *itoa (int __val, char *__s, int __radix)
-{
-    if (!__builtin_constant_p (__radix)) {
-	extern char *__itoa (int, char *, int);
-	return __itoa (__val, __s, __radix);
-    } else if (__radix < 2 || __radix > 36) {
-	*__s = 0;
-	return __s;
-    } else {
-	extern char *__itoa_ncheck (int, char *, unsigned char);
-	return __itoa_ncheck (__val, __s, __radix);
-    }
-}
+char *itoa (int __val, char *__s, int __radix);
 #endif
 
 /**
@@ -462,20 +449,7 @@ char *itoa (int __val, char *__s, int __radix)
 #ifdef  __DOXYGEN__
 extern char *ltoa(long val, char *s, int radix);
 #else
-extern __inline__ __ATTR_GNU_INLINE__
-char *ltoa (long __val, char *__s, int __radix)
-{
-    if (!__builtin_constant_p (__radix)) {
-	extern char *__ltoa (long, char *, int);
-	return __ltoa (__val, __s, __radix);
-    } else if (__radix < 2 || __radix > 36) {
-	*__s = 0;
-	return __s;
-    } else {
-	extern char *__ltoa_ncheck (long, char *, unsigned char);
-	return __ltoa_ncheck (__val, __s, __radix);
-    }
-}
+char *ltoa (long __val, char *__s, int __radix);
 #endif
 
 /**
@@ -505,20 +479,7 @@ char *ltoa (long __val, char *__s, int __radix)
 #ifdef  __DOXYGEN__
 extern char *utoa(unsigned int val, char *s, int radix);
 #else
-extern __inline__ __ATTR_GNU_INLINE__
-char *utoa (unsigned int __val, char *__s, int __radix)
-{
-    if (!__builtin_constant_p (__radix)) {
-	extern char *__utoa (unsigned int, char *, int);
-	return __utoa (__val, __s, __radix);
-    } else if (__radix < 2 || __radix > 36) {
-	*__s = 0;
-	return __s;
-    } else {
-	extern char *__utoa_ncheck (unsigned int, char *, unsigned char);
-	return __utoa_ncheck (__val, __s, __radix);
-    }
-}
+char *utoa (unsigned int __val, char *__s, int __radix);
 #endif
 
 /**
@@ -547,20 +508,7 @@ char *utoa (unsigned int __val, char *__s, int __radix)
 #ifdef  __DOXYGEN__
 extern char *ultoa(unsigned long val, char *s, int radix);
 #else
-extern __inline__ __ATTR_GNU_INLINE__
-char *ultoa (unsigned long __val, char *__s, int __radix)
-{
-    if (!__builtin_constant_p (__radix)) {
-	extern char *__ultoa (unsigned long, char *, int);
-	return __ultoa (__val, __s, __radix);
-    } else if (__radix < 2 || __radix > 36) {
-	*__s = 0;
-	return __s;
-    } else {
-	extern char *__ultoa_ncheck (unsigned long, char *, unsigned char);
-	return __ultoa_ncheck (__val, __s, __radix);
-    }
-}
+char *ultoa (unsigned long __val, char *__s, int __radix);
 #endif
 
 /**  \ingroup avr_stdlib
@@ -579,12 +527,12 @@ Highest number that can be generated by random(). */
      If no seed value is provided, the functions are automatically seeded with
      a value of 1.
 */
-extern long random(void);
+long random(void);
 /**
  \ingroup avr_stdlib
    Pseudo-random number generator seeding; see random().
 */
-extern void srandom(unsigned long __seed);
+void srandom(unsigned long __seed);
 
 /**
  \ingroup avr_stdlib
@@ -592,7 +540,7 @@ extern void srandom(unsigned long __seed);
    variable located at \c ctx instead of a static library variable
    so the function becomes re-entrant.
 */
-extern long random_r(unsigned long *__ctx);
+long random_r(unsigned long *__ctx);
 #endif /* __ASSEMBLER */
 
 
@@ -638,7 +586,7 @@ extern long random_r(unsigned long *__ctx);
 
    The dtostre() function returns the pointer to the converted string \c s.
 */
-extern char *dtostre(double __val, char *__s, unsigned char __prec,
+char *dtostre(double __val, char *__s, unsigned char __prec,
 		     unsigned char __flags);
 
 /**
@@ -655,7 +603,7 @@ extern char *dtostre(double __val, char *__s, unsigned char __prec,
 
    The dtostrf() function returns the pointer to the converted string \c s.
 */
-extern char *dtostrf(double __val, signed char __width,
+char *dtostrf(double __val, signed char __width,
                      unsigned char __prec, char *__s);
 
 /**

@@ -51,11 +51,7 @@
 /*
  * __USING_MINT8 is defined to 1 if the -mint8 option is in effect.
  */
-#if __INT_MAX__ == 127
-# define __USING_MINT8 1
-#else
 # define __USING_MINT8 0
-#endif
 
 /* Integer types */
 
@@ -118,16 +114,14 @@ typedef unsigned long long int uint64_t;
 
 /* actual implementation goes here */
 
-typedef signed int int8_t __attribute__((__mode__(__QI__)));
-typedef unsigned int uint8_t __attribute__((__mode__(__QI__)));
-typedef signed int int16_t __attribute__ ((__mode__ (__HI__)));
-typedef unsigned int uint16_t __attribute__ ((__mode__ (__HI__)));
-typedef signed int int32_t __attribute__ ((__mode__ (__SI__)));
-typedef unsigned int uint32_t __attribute__ ((__mode__ (__SI__)));
-#if !__USING_MINT8
-typedef signed int int64_t __attribute__((__mode__(__DI__)));
-typedef unsigned int uint64_t __attribute__((__mode__(__DI__)));
-#endif
+typedef signed int int8_t;
+typedef unsigned int uint8_t;
+typedef signed int int16_t;
+typedef unsigned int uint16_t;
+typedef signed int int32_t;
+typedef unsigned int uint32_t;
+typedef signed int int64_t;
+typedef unsigned int uint64_t;
 
 #endif /* defined(__DOXYGEN__) */
 

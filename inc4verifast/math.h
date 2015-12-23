@@ -124,33 +124,33 @@ extern "C" {
 /**
     The cos() function returns the cosine of \a __x, measured in radians.
  */
-extern double cos(double __x) __ATTR_CONST__;
+double cos(double __x);
 #define cosf	cos		/**< The alias for cos().	*/
 
 /**
     The sin() function returns the sine of \a __x, measured in radians.
  */
-extern double sin(double __x) __ATTR_CONST__;
+double sin(double __x);
 #define sinf	sin		/**< The alias for sin().	*/
 
 /**
     The tan() function returns the tangent of \a __x, measured in radians.
  */
-extern double tan(double __x) __ATTR_CONST__;
+double tan(double __x);
 #define tanf	tan		/**< The alias for tan().	*/
 
 /**
     The fabs() function computes the absolute value of a floating-point
     number \a __x.
  */
-extern double fabs(double __x) __ATTR_CONST__;
+double fabs(double __x);
 #define fabsf	fabs		/**< The alias for fabs().	*/
 
 /**
     The function fmod() returns the floating-point remainder of <em>__x /
     __y</em>.
  */
-extern double fmod(double __x, double __y) __ATTR_CONST__;
+double fmod(double __x, double __y);
 #define fmodf	fmod		/**< The alias for fmod().	*/
 
 /**
@@ -165,22 +165,22 @@ extern double fmod(double __x, double __y) __ATTR_CONST__;
     the GCC 4.3 can replace this function with inline code that does not
     permit to use NULL address for the avoiding of storing.
  */
-extern double modf(double __x, double *__iptr);
+double modf(double __x, double *__iptr);
 
 /** The alias for modf().
  */
-extern float modff (float __x, float *__iptr);
+float modff (float __x, float *__iptr);
 
 /**
     The sqrt() function returns the non-negative square root of \a __x.
  */
-extern double sqrt(double __x) __ATTR_CONST__;
-extern float sqrtf (float) __ATTR_CONST__;
+double sqrt(double __x);
+float sqrtf (float a);
 
 /**
     The cbrt() function returns the cube root of \a __x.
  */
-extern double cbrt(double __x) __ATTR_CONST__;
+double cbrt(double __x);
 #define cbrtf	cbrt		/**< The alias for cbrt().	*/
 
 /**
@@ -191,7 +191,7 @@ extern double cbrt(double __x) __ATTR_CONST__;
     formula is wise, since the error is much smaller. No underflow with
     small \a __x and \a __y. No overflow if result is in range.
  */
-extern double hypot (double __x, double __y) __ATTR_CONST__;
+double hypot (double __x, double __y);
 #define hypotf	hypot		/**< The alias for hypot().	*/
 
 /**
@@ -199,21 +199,21 @@ extern double hypot (double __x, double __y) __ATTR_CONST__;
 
     \note This function does not belong to the C standard definition.
  */
-extern double square(double __x) __ATTR_CONST__;
+double square(double __x);
 #define squaref	square		/**< The alias for square().	*/
 
 /**
     The floor() function returns the largest integral value less than or
     equal to \a __x, expressed as a floating-point number.
  */
-extern double floor(double __x) __ATTR_CONST__;
+double floor(double __x);
 #define floorf	floor		/**< The alias for floor().	*/
 
 /**
     The ceil() function returns the smallest integral value greater than
     or equal to \a __x, expressed as a floating-point number.
  */
-extern double ceil(double __x) __ATTR_CONST__;
+double ceil(double __x);
 #define ceilf	ceil		/**< The alias for ceil().	*/
 
 /**
@@ -231,7 +231,7 @@ extern double ceil(double __x) __ATTR_CONST__;
     \note  This implementation permits a zero pointer as a directive to
     skip a storing the exponent.
  */
-extern double frexp(double __x, int *__pexp);
+double frexp(double __x, int *__pexp);
 #define frexpf	frexp		/**< The alias for frexp().	*/
 
 /**
@@ -239,31 +239,31 @@ extern double frexp(double __x, int *__pexp);
     power of 2. It returns the value of \a __x times 2 raised to the power
     \a __exp.
  */
-extern double ldexp(double __x, int __exp) __ATTR_CONST__;
+double ldexp(double __x, int __exp);
 #define ldexpf	ldexp		/**< The alias for ldexp().	*/
 
 /**
     The exp() function returns the exponential value of \a __x.
  */
-extern double exp(double __x) __ATTR_CONST__;
+double exp(double __x);
 #define expf	exp		/**< The alias for exp().	*/
 
 /**
     The cosh() function returns the hyperbolic cosine of \a __x.
  */
-extern double cosh(double __x) __ATTR_CONST__;
+double cosh(double __x);
 #define coshf	cosh		/**< The alias for cosh().	*/
 
 /**
     The sinh() function returns the hyperbolic sine of \a __x.
  */
-extern double sinh(double __x) __ATTR_CONST__;
+double sinh(double __x);
 #define sinhf	sinh		/**< The alias for sinh().	*/
 
 /**
     The tanh() function returns the hyperbolic tangent of \a __x.
  */
-extern double tanh(double __x) __ATTR_CONST__;
+double tanh(double __x);
 #define tanhf	tanh		/**< The alias for tanh().	*/
 
 /**
@@ -271,7 +271,7 @@ extern double tanh(double __x) __ATTR_CONST__;
     \a __x.  The returned value is in the range [0, pi] radians. A domain
     error occurs for arguments not in the range [-1, +1].
  */
-extern double acos(double __x) __ATTR_CONST__;
+double acos(double __x);
 #define acosf	acos		/**< The alias for acos().	*/
 
 /**
@@ -279,14 +279,14 @@ extern double acos(double __x) __ATTR_CONST__;
     \a __x.  The returned value is in the range [-pi/2, pi/2] radians. A
     domain error occurs for arguments not in the range [-1, +1].
  */
-extern double asin(double __x) __ATTR_CONST__;
+double asin(double __x);
 #define asinf	asin		/**< The alias for asin().	*/
 
 /**
     The atan() function computes the principal value of the arc tangent
     of \a __x.  The returned value is in the range [-pi/2, pi/2] radians.
  */
-extern double atan(double __x) __ATTR_CONST__;
+double atan(double __x);
 #define atanf	atan		/**< The alias for atan().	*/
 
 /**
@@ -295,32 +295,32 @@ extern double atan(double __x) __ATTR_CONST__;
     the quadrant of the return value.  The returned value is in the range
     [-pi, +pi] radians.
  */
-extern double atan2(double __y, double __x) __ATTR_CONST__;
+double atan2(double __y, double __x);
 #define atan2f	atan2		/**< The alias for atan2().	*/
 
 /**
     The log() function returns the natural logarithm of argument \a __x.
  */
-extern double log(double __x) __ATTR_CONST__;
+double log(double __x);
 #define logf	log		/**< The alias for log().	*/
 
 /**
     The log10() function returns the logarithm of argument \a __x to base 10.
  */
-extern double log10(double __x) __ATTR_CONST__;
+double log10(double __x);
 #define log10f	log10		/**< The alias for log10().	*/
 
 /**
     The function pow() returns the value of \a __x to the exponent \a __y.
  */
-extern double pow(double __x, double __y) __ATTR_CONST__;
+double pow(double __x, double __y);
 #define powf	pow		/**< The alias for pow().	*/
 
 /**
     The function isnan() returns 1 if the argument \a __x represents a
     "not-a-number" (NaN) object, otherwise 0.
  */
-extern int isnan(double __x) __ATTR_CONST__;
+int isnan(double __x);
 #define	isnanf	isnan		/**< The alias for isnan().	*/
 
 /**
@@ -330,40 +330,21 @@ extern int isnan(double __x) __ATTR_CONST__;
     \note The GCC 4.3 can replace this function with inline code that
     returns the 1 value for both infinities (gcc bug #35509).
  */
-extern int isinf(double __x) __ATTR_CONST__;
+int isinf(double __x);
 #define isinff	isinf		/**< The alias for isinf().	*/
 
 /**
     The isfinite() function returns a nonzero value if \a __x is finite:
     not plus or minus infinity, and not NaN.
  */
-__ATTR_CONST__ static inline int isfinite (double __x)
-{
-    unsigned char __exp;
-    __asm__ (
-	"mov	%0, %C1		\n\t"
-	"lsl	%0		\n\t"
-	"mov	%0, %D1		\n\t"
-	"rol	%0		"
-	: "=r" (__exp)
-	: "r" (__x)	);
-    return __exp != 0xff;
-}
+int isfinite (double __x);
 #define isfinitef isfinite	/**< The alias for isfinite().	*/
 
 /**
     The copysign() function returns \a __x but with the sign of \a __y.
     They work even if \a __x or \a __y are NaN or zero.
 */
-__ATTR_CONST__ static inline double copysign (double __x, double __y)
-{
-    __asm__ (
-	"bst	%D2, 7	\n\t"
-	"bld	%D0, 7	"
-	: "=r" (__x)
-	: "0" (__x), "r" (__y) );
-    return __x;
-}
+double copysign (double __x, double __y);
 #define copysignf copysign	/**< The alias for copysign().	*/
 
 /**
@@ -373,14 +354,14 @@ __ATTR_CONST__ static inline double copysign (double __x, double __y)
     comparison `-0.0 < 0.0' is false, but `signbit (-0.0)' will return a
     nonzero value.
  */
-extern int signbit (double __x) __ATTR_CONST__;
+int signbit (double __x);
 #define signbitf signbit	/**< The alias for signbit().	*/
 
 /**
     The fdim() function returns <em>max(__x - __y, 0)</em>. If \a __x or
     \a __y or both are NaN, NaN is returned.
  */
-extern double fdim (double __x, double __y) __ATTR_CONST__;
+double fdim (double __x, double __y);
 #define fdimf	fdim		/**< The alias for fdim().	*/
 
 /**
@@ -389,7 +370,7 @@ extern double fdim (double __x, double __y) __ATTR_CONST__;
     not rounded to the destination type.  This can sometimes improve the
     precision of a calculation.
  */
-extern double fma (double __x, double __y, double __z) __ATTR_CONST__;
+double fma (double __x, double __y, double __z);
 #define fmaf	fma		/**< The alias for fma().	*/
 
 /**
@@ -397,7 +378,7 @@ extern double fma (double __x, double __y, double __z) __ATTR_CONST__;
     \a __y. If an argument is NaN, the other argument is returned. If
     both arguments are NaN, NaN is returned.
  */
-extern double fmax (double __x, double __y) __ATTR_CONST__;
+double fmax (double __x, double __y);
 #define fmaxf	fmax		/**< The alias for fmax().	*/
 
 /**
@@ -405,14 +386,14 @@ extern double fmax (double __x, double __y) __ATTR_CONST__;
     \a __y. If an argument is NaN, the other argument is returned. If
     both arguments are NaN, NaN is returned.
  */
-extern double fmin (double __x, double __y) __ATTR_CONST__;
+double fmin (double __x, double __y);
 #define fminf	fmin		/**< The alias for fmin().	*/
 
 /**
     The trunc() function rounds \a __x to the nearest integer not larger
     in absolute value.
  */
-extern double trunc (double __x) __ATTR_CONST__;
+double trunc (double __x);
 #define truncf	trunc		/**< The alias for trunc().	*/
 
 /**
@@ -423,7 +404,7 @@ extern double trunc (double __x) __ATTR_CONST__;
     \return The rounded value. If \a __x is an integral or infinite, \a
     __x itself is returned. If \a __x is \c NaN, then \c NaN is returned.
  */
-extern double round (double __x) __ATTR_CONST__;
+double round (double __x);
 #define roundf	round		/**< The alias for round().	*/
 
 /**
@@ -436,7 +417,7 @@ extern double round (double __x) __ATTR_CONST__;
     or an overflow was, this realization returns the \c LONG_MIN value
     (0x80000000).
  */
-extern long lround (double __x) __ATTR_CONST__;
+long lround (double __x);
 #define lroundf	lround		/**< The alias for lround().	*/
 
 /**
@@ -450,7 +431,7 @@ extern long lround (double __x) __ATTR_CONST__;
     number or an overflow was, this realization returns the \c LONG_MIN
     value (0x80000000).
  */
-extern long lrint (double __x) __ATTR_CONST__;
+long lrint (double __x);
 #define lrintf	lrint		/**< The alias for lrint().	*/
 
 #ifdef __cplusplus
