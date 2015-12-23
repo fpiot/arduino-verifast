@@ -65,19 +65,21 @@ extern "C" {
 
 
 /** Result type for function div(). */
-typedef struct {
+struct div_t_s {
 	int quot;                   /**< The Quotient. */
 	int rem;                    /**< The Remainder. */
-} div_t;
+};
+typedef struct div_t_s div_t;
 
 /** Result type for function ldiv(). */
-typedef struct {
+struct ldiv_t_s {
 	long quot;                  /**< The Quotient. */
 	long rem;                   /**< The Remainder. */
-} ldiv_t;
+};
+typedef struct ldiv_t_s ldiv_t;
 
 /** Comparision function type for qsort(), just for convenience. */
-typedef int (*__compar_fn_t)(const void *, const void *);
+//typedef int (*__compar_fn_t)(const void *, const void *);
 
 #ifndef __DOXYGEN__
 
@@ -111,12 +113,12 @@ typedef int (*__compar_fn_t)(const void *, const void *);
     This realization disables interrupts and jumps to _exit() function
     with argument equal to 1. In the limited AVR environment, execution is
     effectively halted by entering an infinite loop. */
-extern void abort(void) __ATTR_NORETURN__;
+void abort(void);
 
 /** The abs() function computes the absolute value of the integer \c i.
    \note The abs() and labs() functions are builtins of gcc.
 */
-extern int abs(int __i) __ATTR_CONST__;
+int abs(int __i);
 #ifndef __DOXYGEN__
 #define	abs(__i) __builtin_abs(__i)
 #endif
@@ -125,7 +127,7 @@ extern int abs(int __i) __ATTR_CONST__;
     \c i.
    \note The abs() and labs() functions are builtins of gcc.
 */
-extern long labs(long __i) __ATTR_CONST__;
+extern long labs(long __i);
 #ifndef __DOXYGEN__
 #define labs(__i) __builtin_labs(__i)
 #endif
@@ -148,8 +150,9 @@ extern long labs(long __i) __ATTR_CONST__;
      the array, or a null pointer if no match is found.  If two
      members compare as equal, which member is matched is unspecified.
 */
-extern void *bsearch(const void *__key, const void *__base, size_t __nmemb,
-		     size_t __size, int (*__compar)(const void *, const void *));
+typedef int __compar_bsearch(const void *, const void *));
+void *bsearch(const void *__key, const void *__base, size_t __nmemb,
+		     size_t __size, __compar_bsearch *__compar);
 
 /* __divmodhi4 and __divmodsi4 from libgcc.a */
 /**
