@@ -63,7 +63,7 @@ extern "C" {
     defined by the ISO standard, plus some AVR-specific extensions.
 */
 
-/*@{*/
+
 /** Result type for function div(). */
 typedef struct {
 	int quot;                   /**< The Quotient. */
@@ -381,9 +381,9 @@ extern void srand(unsigned int __seed);
    so the function becomes re-entrant.
 */
 extern int rand_r(unsigned long *__ctx);
-/*@}*/
 
-/*@{*/
+
+
 /** \name Non-standard (i.e. non-ISO C) functions.
  \ingroup avr_stdlib
 */
@@ -591,9 +591,9 @@ extern void srandom(unsigned long __seed);
 */
 extern long random_r(unsigned long *__ctx);
 #endif /* __ASSEMBLER */
-/*@}*/
 
-/*@{*/
+
+
 /** \name Conversion functions for double arguments.
  \ingroup avr_stdlib
  Note that these functions are not located in the default library,
@@ -667,7 +667,7 @@ extern char *dtostrf(double __val, signed char __width,
 */
 #define EXIT_FAILURE 1
 
-/*@}*/
+
 
 #if 0  /* not yet implemented */
 extern int atexit(void (*)(void));

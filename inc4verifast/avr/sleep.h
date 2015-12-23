@@ -353,6 +353,6 @@ do { \
 #endif
 
 
-/*@}*/
+
 
 #endif /* _AVR_SLEEP_H_ */

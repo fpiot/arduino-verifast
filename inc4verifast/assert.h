@@ -53,7 +53,7 @@
     only abort() will be called to halt the application.
 */
 
-/*@{*/
+
 
 /*
  * The ability to include this file (with or without NDEBUG) is a
@@ -110,5 +110,5 @@ extern void __assert(const char *__func, const char *__file,
 }
 #endif
 
-/*@}*/
+
 /* EOF */

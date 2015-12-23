@@ -267,7 +267,7 @@ struct __file {
 
 #endif /* not __DOXYGEN__ */
 
-/*@{*/
+
 /**
    \c FILE is the opaque structure that is passed around between the
    various standard IO functions.
@@ -945,7 +945,7 @@ static __inline__ int fflush(FILE *stream __attribute__((unused)))
 }
 #endif
 
-/*@}*/
+
 
 /*
  * The following constants are currently not used by avr-libc's

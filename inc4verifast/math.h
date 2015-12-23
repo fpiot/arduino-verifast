@@ -65,7 +65,7 @@
 
 
 /** \ingroup avr_math	*/
-/*@{*/
+
 
 /** The constant \a e.	*/
 #define M_E		2.7182818284590452354
@@ -457,5 +457,5 @@ extern long lrint (double __x) __ATTR_CONST__;
 }
 #endif
 
-/*@}*/
+
 #endif /* !__MATH_H */

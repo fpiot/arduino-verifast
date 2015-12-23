@@ -66,7 +66,7 @@
 /** \name Exact-width integer types
     Integer types having exactly the specified width */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     8-bit signed type. */
@@ -112,7 +112,7 @@ typedef signed long long int int64_t;
 
 typedef unsigned long long int uint64_t;
 
-/*@}*/
+
 
 #else /* !defined(__DOXYGEN__) */
 
@@ -134,7 +134,7 @@ typedef unsigned int uint64_t __attribute__((__mode__(__DI__)));
 /** \name Integer types capable of holding object pointers
     These allow you to declare variables of the same size as a pointer. */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     Signed pointer compatible type. */
@@ -146,12 +146,12 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-/*@}*/
+
 
 /** \name Minimum-width integer types
    Integer types having at least the specified width */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     signed int with at least 8 bits. */
@@ -199,13 +199,13 @@ typedef int64_t  int_least64_t;
 typedef uint64_t uint_least64_t;
 #endif
 
-/*@}*/
+
 
 
 /** \name Fastest minimum-width integer types
    Integer types being usually fastest having at least the specified width */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     fastest signed int with at least 8 bits. */
@@ -253,14 +253,14 @@ typedef int64_t int_fast64_t;
 typedef uint64_t uint_fast64_t;
 #endif
 
-/*@}*/
+
 
 
 /** \name Greatest-width integer types
    Types designating integer data capable of representing any value of
    any integer type in the corresponding signed or unsigned category */
 
-/*@{*/
+
 
 #if __USING_MINT8
 typedef int32_t intmax_t;
@@ -278,7 +278,7 @@ typedef int64_t intmax_t;
 typedef uint64_t uintmax_t;
 #endif /* __USING_MINT8 */
 
-/*@}*/
+
 
 /* Helping macro */
 #ifndef __CONCAT
@@ -292,7 +292,7 @@ typedef uint64_t uintmax_t;
    C++ implementations should define these macros only when
    __STDC_LIMIT_MACROS is defined before <stdint.h> is included */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     largest positive value an int8_t can hold. */
@@ -368,10 +368,10 @@ typedef uint64_t uintmax_t;
 
 #define UINT64_MAX (__CONCAT(INT64_MAX, U) * 2ULL + 1ULL)
 
-/*@}*/
+
 
 /** \name Limits of minimum-width integer types */
-/*@{*/
+
 
 /** \ingroup avr_stdint
     largest positive value an int_least8_t can hold. */
@@ -433,11 +433,11 @@ typedef uint64_t uintmax_t;
 
 #define UINT_LEAST64_MAX UINT64_MAX
 
-/*@}*/
+
 
 /** \name Limits of fastest minimum-width integer types */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     largest positive value an int_fast8_t can hold. */
@@ -499,11 +499,11 @@ typedef uint64_t uintmax_t;
 
 #define UINT_FAST64_MAX UINT64_MAX
 
-/*@}*/
+
 
 /** \name Limits of integer types capable of holding object pointers */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     largest positive value an intptr_t can hold. */
@@ -520,11 +520,11 @@ typedef uint64_t uintmax_t;
 
 #define UINTPTR_MAX UINT16_MAX
 
-/*@}*/
+
 
 /** \name Limits of greatest-width integer types */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     largest positive value an intmax_t can hold. */
@@ -541,13 +541,13 @@ typedef uint64_t uintmax_t;
 
 #define UINTMAX_MAX UINT64_MAX
 
-/*@}*/
+
 
 /** \name Limits of other integer types
     C++ implementations should define these macros only when
     __STDC_LIMIT_MACROS is defined before <stdint.h> is included */
 
-/*@{*/
+
 
 /** \ingroup avr_stdint
     largest positive value a ptrdiff_t can hold. */
@@ -665,7 +665,7 @@ typedef uint64_t uintmax_t;
 
 #define UINTMAX_C(value) __CONCAT(value, ULL)
 
-/*@}*/
+
 
 #endif /* !defined(__cplusplus) || defined(__STDC_LIMIT_MACROS) */
 
