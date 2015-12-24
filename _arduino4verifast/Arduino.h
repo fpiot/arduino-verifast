@@ -12,7 +12,7 @@ void init(void);
   //@ ensures true;
 
 void pinMode(uint8_t pin, uint8_t mode);
-  //@ requires true;
+  //@ requires mode == INPUT || mode == OUTPUT || mode == INPUT_PULLUP;
   //@ ensures true;
 
 void digitalWrite(uint8_t pin, uint8_t value);
