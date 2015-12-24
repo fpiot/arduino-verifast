@@ -5,7 +5,7 @@
 
 int main() //@ : main
   //@ requires true;
-  //@ ensures true;
+  //@ ensures false;
 {
 	init();
 

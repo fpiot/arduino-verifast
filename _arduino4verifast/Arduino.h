@@ -12,13 +12,13 @@ void init(void);
   //@ ensures true;
 
 void pinMode(uint8_t pin, uint8_t mode);
-  //@ requires mode == INPUT || mode == OUTPUT || mode == INPUT_PULLUP;
+  //@ requires (0 <= pin && pin <= 13) &*& (mode == INPUT || mode == OUTPUT || mode == INPUT_PULLUP);
   //@ ensures true;
 
 void digitalWrite(uint8_t pin, uint8_t value);
-  //@ requires true;
+  //@ requires (0 <= pin && pin <= 13) &*& (value == HIGH || value == LOW);
   //@ ensures true;
 
 void delay(unsigned long ms);
-  //@ requires true;
+  //@ requires ms > 0;
   //@ ensures true;
