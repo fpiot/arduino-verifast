@@ -3,12 +3,17 @@
 #define LED 13
 #define BLINK_DELAY_MS 500
 
-int main() {
+int main() //@ : main
+  //@ requires true;
+  //@ ensures true;
+{
 	init();
 
 	pinMode(LED, OUTPUT);
 
-	while(1) {
+	while(1)
+	  //@ invariant true;
+	{
 		digitalWrite(LED, HIGH);
 		delay(BLINK_DELAY_MS);
 		digitalWrite(LED, LOW);
