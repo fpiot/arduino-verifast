@@ -103,8 +103,7 @@ write: $(PRG).hex
 	$(LOADER) $(LOADERFLAGS) -U flash:w:$<
 
 VERIFAST = verifast
-VERIFAST_INC = ../../inc4verifast
-VERIFAST_OPT = -I ../../_arduino -I $(VERIFAST_INC)
+VERIFAST_OPT = -c -I ../../_arduino4verifast
 
 verify:
 	$(VERIFAST) $(VERIFAST_OPT) main.c
